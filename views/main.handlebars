@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Awesome Trends</title>
+
+    
+
+</head>
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <h2 class="glow text-center"><b>Awesome trends from all around</b></h2>
+        <h3 class="glow text-center">
+          <b>  
+          {{#with Gtrends.[1]}}
+          We are live from {{city}}
+          {{/with}}
+          </b>
+        </h3>
+                <h3 class="glow text-center"><b>   {{today}}   </b></h3>
+
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+
+          <div class="col-sm-3" style="background-color:white;">
+            <div><img src="twitter.png" class="img-responsive fit-image"></div>
+            <br>
+            {{#each twitterTrends}}
+            <div class="trendContainer" >
+              <p class="row"> {{name}} </p>
+              <p class="row"> <a target="_blank" href="{{url}}"><b>Link</b> </a> </p>
+              <p class="row"> <b>Tweets </b>{{tweet_volume}}</p>
+            </div>      
+            <br>      
+            {{/each}}
+          </div>
+
+          <div class="col-sm-3" style="background-color:white;">
+            <div><img src="reddit.png" class="img-responsive fit-image"></div>
+            <br>
+            {{#each redditTrends}}
+            <div class="trendContainer" >
+              <p class="row">  {{title}} </p>
+              <p class="row" > <img src="{{thumbnail}}" alt=""> </p>
+              <p class="row"> <b>Subreddit</b> {{subreddit}} </p>
+              <p class="row"> <b>Ups</b> {{ups}} </p>
+              <p class="row"> <a target="_blank" href="{{url}}">Link</a> </p>
+            </div>
+            <br>
+            {{/each}}
+          </div>
+
+
+
+          <div class="col-sm-3" style="background-color:white;">
+            <div><img src="google.png" class="img-responsive fit-image"></div>
+
+            {{#each Gtrends}}
+            <br>
+            <div class="trendContainer">
+            <p class="row"><b>{{articleTitle}}</b> <a target="_blank" href="{{url}}">Link</a></p>
+            
+            <p class="row"></p>
+            <p class="row">{{snippet}}</p>
+            <i><p class="row"><b>Source </b>{{source}} <b>{{time}}</b></p></i>
+            </div>
+            {{/each}}
+          </div>
+
+          <div class="col-sm-3" style="background-color:white;">
+            <div><img src="youtube.png" class="img-responsive image-fluid"></div>
+            {{#each YTBTrends}}
+            <div class="trendContainer">
+            <p class="row"><b>{{title}} </b> <i>published at {{publishedAt}}</i></p>
+            <p class="row"><b>Channel {{channelTitle}}</b> </p>
+            <p class="row">{{description}}</p>
+            <p class="row"><b>Views </b>{{statistics}}</p>
+            <p class="row"><img src="{{thumbnail}}" id="ytbThumbNail"></p>
+            </div>
+
+            {{/each}}
+          </div>
+
+        </div>
+      </div>
+      
+</body>
+</html>
