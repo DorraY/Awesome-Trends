@@ -125,7 +125,7 @@ requestGoogleTrends()
 //youtube
 let requestYoutubeTrends = async() => {
   ytbTrends = []
-  let YTBlink = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=TN&key="+YTB_KEY
+  let YTBlink = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=TN&key="+process.env.YTB_token
   return new Promise((resolve,reject) => {
     request(YTBlink,(err,res,body) => {
       if (err) {
