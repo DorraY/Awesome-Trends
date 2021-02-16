@@ -132,7 +132,7 @@ let requestYoutubeTrends = async() => {
         reject(err)
         console.log(err)
       }
-      else {
+      else {c
         for (i=0;i<JSON.parse(body).items.length;i++) {
           ytbTrends.push(
             {
