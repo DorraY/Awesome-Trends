@@ -7,6 +7,20 @@ let Twitter = require('twitter')
 date = new Date()
 today = (date.getDate() +"/"+ (date.getMonth()+1) + "/"+ date.getFullYear())
 
+let apikey = process.env.geo_token
+let latitude = '51.0';
+let longitude = '7.0';
+
+fetch('https://api.opencagedata.com/geocode/v1/json'
+  + '?'
+  + 'key=' + apikey
+  + '&q=' + encodeURIComponent(latitude + ',' + longitude)
+  + '&pretty=1'
+  + '&no_annotations=1')
+ .then((response) => response.json())
+ .then((data) => alert(data.results[0].formatted));
+
+
 
 let twitterClient = new Twitter({
   consumer_key: process.env.consumer_key,
