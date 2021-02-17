@@ -6,7 +6,7 @@ body {
   }
   
   .glow {
-    font-size: 3rem;
+    font-size: 5em;
     color: #fff;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
