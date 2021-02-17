@@ -3,15 +3,17 @@ var router = express.Router()
 var request = require('request')
 let Twitter = require('twitter')
 
+fetch('https://extreme-ip-lookup.com/json/')
+.then( res => res.json())
+.then(response => {
+    console.log("Country: ", response.country);
+ })
+ .catch((data, status) => {
+    console.log('Request failed');
+ })
 
 date = new Date()
 today = (date.getDate() +"/"+ (date.getMonth()+1) + "/"+ date.getFullYear())
-
-
-
-
-
-
 
 let twitterClient = new Twitter({
   consumer_key: process.env.consumer_key,
