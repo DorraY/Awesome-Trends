@@ -12,14 +12,7 @@ let apikey = process.env.geo_token
 let latitude = '51.0';
 let longitude = '7.0';
 
-fetch('https://api.opencagedata.com/geocode/v1/json'
-  + '?'
-  + 'key=' + apikey
-  + '&q=' + encodeURIComponent(latitude + ',' + longitude)
-  + '&pretty=1'
-  + '&no_annotations=1')
- .then((response) => response.json())
- .then((data) => console.log("****** "+data.results[0].formatted));
+
 
 
 

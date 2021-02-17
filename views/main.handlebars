@@ -11,6 +11,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Awesome Trends</title>
 
+    <script>
+        fetch('https://api.opencagedata.com/geocode/v1/json'
+          + '?'
+          + 'key=' + apikey
+          + '&q=' + encodeURIComponent(latitude + ',' + longitude)
+          + '&pretty=1'
+          + '&no_annotations=1')
+        .then((response) => response.json())
+        .then((data) => console.log("****** "+data.results[0].formatted));
+
+    </script>
+
     
 
 </head>
