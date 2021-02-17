@@ -20,9 +20,9 @@
     "lint": "^0.7.0",
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "twitter": "^1.7.1"
-
   },
   "engines": {
     "node": ">=0.12"
