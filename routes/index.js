@@ -19,7 +19,7 @@ fetch('https://api.opencagedata.com/geocode/v1/json'
   + '&pretty=1'
   + '&no_annotations=1')
  .then((response) => response.json())
- .then((data) => alert(data.results[0].formatted));
+ .then((data) => console.log(data.results[0].formatted));
 
 
 
