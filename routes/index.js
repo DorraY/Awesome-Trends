@@ -1,16 +1,13 @@
 var express = require('express')
 var router = express.Router()
 var request = require('request')
-const fetch = require('node-fetch')
 let Twitter = require('twitter')
 
 
 date = new Date()
 today = (date.getDate() +"/"+ (date.getMonth()+1) + "/"+ date.getFullYear())
 
-let apikey = process.env.geo_token
-let latitude = '51.0';
-let longitude = '7.0';
+
 
 
 
